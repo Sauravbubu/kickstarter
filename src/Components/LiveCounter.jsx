@@ -1,7 +1,18 @@
 import { Flex, Grid, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const LiveCounter = () => {
+  const [funded, setfunded] = useState(223702);
+  const [money, setmoney] = useState(45);
+  
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    // console.log('This will run after 1 second!')
+    setfunded(funded+Math.floor((Math.random() * 100) + 1))
+    setmoney(money+Math.floor((Math.random() * 10) + 1))
+  }, 2000);
+  return () => clearTimeout(timer);
+}, [funded]);
   return (
     
     <Grid
@@ -22,7 +33,7 @@ const LiveCounter = () => {
       boxShadow="xl"
     >
       <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }} color="teal.700">
-        223,702
+        {funded}
       </Text>
       <Text fontSize="m">projects funded</Text>
     </Flex>
@@ -33,7 +44,7 @@ const LiveCounter = () => {
       boxShadow="xl"
     >
       <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }} color="teal.700">
-        $6,156,106,519
+        $6,156,106,519,{money}
       </Text>
       <Text fontSize="m">towards creative work</Text>
     </Flex>

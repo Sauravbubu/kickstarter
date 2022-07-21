@@ -12,7 +12,7 @@ console.log(data);
     <Box h="400px"  w={[400,500,700]}>
     <Text fontSize="10px">RECOMMENDED POST</Text>
       <Box w="100%"  h="100%" gap="1rem" display='flex' flexDirection="column">
-{arr.map((e,i)=> <Flex h="30%"  gap="1rem" w="100%">
+{arr.map((e,i)=> <Flex key ={i} h="30%"  gap="1rem" w="100%">
 <Image src={e.image} w="30%"  h="100% " />
 <Flex flexDirection="column" gap=".2rem">
 <Text> {e.pname}</Text>
