@@ -72,7 +72,7 @@ try {
                 Sign in
               </Button>
 
-              
+              <Text>New to Kickstater <Link>Sign Up</Link></Text>
             </Stack>
           </Stack>
           
