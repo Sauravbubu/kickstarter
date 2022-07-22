@@ -2,12 +2,17 @@ import { Box, Center, Flex, Grid, Text } from "@chakra-ui/react";
 import React from "react";
 import LiveCounter from "../../Components/LiveCounter";
 import Navbar from "../../Components/Navbar/Navbar";
-
+import Featuredpost from "../../Components/Featuredpost";
+import Recommended from "../../Components/Recommended";
+import Responsive from "../../Components/slickslider";
+import Footer from "../../Components/Footer";
+import Banner from "../../Components/Banner";
 const Home = () => {
   const bgimage = "https://i.imgur.com/2uMdJvK.png";
   return (
     <div>
       <Navbar />
+
 
       <Box
         style={{
@@ -32,6 +37,16 @@ const Home = () => {
 <Text fontSize="m"  textAlign="center"> ON KICKSTARTER:</Text>
 <LiveCounter/>
       </Box>
+      <Flex p="4rem" gap="1rem">
+      <Featuredpost/>
+      <Recommended/>
+     
+</Flex>
+<Responsive/>
+ <Banner/>
+ <Responsive/>
+ <Footer/>
+    
     </div>
   );
 };

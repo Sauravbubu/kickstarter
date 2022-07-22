@@ -1,8 +1,10 @@
-import React from 'react'
-// import {Link} from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import {NavLink,useSearchParams} from 'react-router-dom'
 import {Button, Flex, Image, Link,Text} from '@chakra-ui/react'
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
 const Navbar = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  
     const tabs=[
         "Arts",
        " Comics & Illustration",
@@ -21,16 +23,27 @@ const Navbar = () => {
         <Link color='teal.800' href='#'>Start a Project</Link>
 
     </Flex>
-    <Image ml="-30px" h="20px"  src="https://ksr-static.imgix.net/tq0sfld-kickstarter-logo-green.png?ixlib=rb-2.1.0&auto=compress%2Cformat&w=1000&fit=min&s=f00262bade8a51249b7d63c8f76ce47f" alt="Kickstarter"/>
-    <Button>Login</Button>
+    <NavLink to="/home">
+    <Image ml="-30px" h="20px"  src="https://ksr-static.imgix.net/tq0sfld-kickstarter-logo-green.png?ixlib=rb-2.1.0&auto=compress%2Cformat&w=1000&fit=min&s=f00262bade8a51249b7d63c8f76ce47f" alt="Kickstarter"/></NavLink>
+    <Button><NavLink to="/login">
+                Sign in
+                </NavLink></Button>
     </Flex>
 
     <Tabs align='center'>
   <TabList p="1rem">
-  {tabs.map((t,i)=><Tab key={i}>{t}</Tab>)}
-    
+  {tabs.map((t,i)=>
+    <NavLink  key={i} to={`/home/${t}`}><Tab>  {t} </Tab> </NavLink>
+  )}
+
     
   </TabList>
+
+{/* <TabPanels>
+  {tabs.map((t,i)=>
+  <TabPanel key={i}>{t}</TabPanel>
+  )}
+  </TabPanels> */}
 </Tabs>
 
     </>
