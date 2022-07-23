@@ -23,36 +23,38 @@ const Navbar = () => {
 
   
   return (
-    <>
+    <Box   w="full" bg="white">
       <Flex
 
-        p="2rem"
+        p="1rem"
         justifyContent="space-between"
         boxShadow="base"
         borderColor="gray.100"
         alignItems="center"
       >
         <Flex gap="1rem">
-          <Text>
+          <Text fontSize={["8px","10px","15px"]} >
             <Link color="teal.800" href="#">
               Discover
             </Link>
           </Text>
-          <Link color="teal.800" href="#">
+          <Link fontSize={["8px","10px","15px"]} color="teal.800" href="#">
             Start a Project
           </Link>
         </Flex>
         <NavLink to="/home">
           <Image
             ml="-30px"
-            h="20px"
+            // h="20px"
+            w={["90px","120px","205px"]}
+            h={["10px","15px","25px"]}
             src="https://ksr-static.imgix.net/tq0sfld-kickstarter-logo-green.png?ixlib=rb-2.1.0&auto=compress%2Cformat&w=1000&fit=min&s=f00262bade8a51249b7d63c8f76ce47f"
             alt="Kickstarter"
           />
         </NavLink>
 
         {!user ? (
-          <Button>
+          <Button variant={"outline"} bg="green.200">
             <NavLink to="/login">Sign in</NavLink>
           </Button>
         ) : (
@@ -68,7 +70,7 @@ const Navbar = () => {
       </Flex>
 
       <Tabs align="center">
-        <TabList p="1rem">
+        <TabList >
         
           {tabs.map((t, i) => (
             <NavLink key={i} to={`/home/${t}`}>
@@ -83,7 +85,7 @@ const Navbar = () => {
   )}
   </TabPanels> */}
       </Tabs>
-    </>
+    </Box>
   );
 };
 

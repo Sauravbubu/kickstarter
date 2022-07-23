@@ -7,19 +7,19 @@ import {
   Input,
   Checkbox,
   Stack,
+  
   Button,
   Heading,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
-import {Link}  from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { useContext } from 'react';
-import { UserAuth } from '../Context/Authcontext';
-import GoogleButton from 'react-google-button';
-import Navbar from '../Components/Navbar/Navbar';
+import { UserAuth } from '../../Context/Authcontext';
+
 // import { Authcontext } from '../Components/context/AuthContext';
 
-export default function Login() {
+export default function Signup() {
 const {handleLogin}=UserAuth()
   const handleGsignin=async ()=>{
     console.log(1);
@@ -54,17 +54,22 @@ try {
       bg={useColorModeValue('gray.50', 'gray.800')}>
       
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6} zIndex="10">
-      <GoogleButton onClick={handleGsignin} style={{width:"100%" ,zIndex:10,backgroundColor:"salmon"}} />
+      
         <Stack align={'center'}>
-          <Heading fontSize={'4xl'} color="white"> Sign in to your account</Heading>
+          <Heading fontSize={'4xl'} color="white"> Sign Up </Heading>
          
         </Stack>
         <Box
           rounded={'lg'}
           bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
+          w="500px"
           p={8}>
-          <Stack spacing={4}>
+          <Stack spacing={4} >
+          <FormControl id="name">
+              <FormLabel>Name</FormLabel>
+              <Input type="text" />
+            </FormControl>
             <FormControl id="email">
               <FormLabel>Email address</FormLabel>
               <Input type="email" />
@@ -88,10 +93,10 @@ try {
                   bg: 'blue.500',
                 }}>
                 
-                Sign in
+                Sign Up
               </Button>
 
-              <Text>New to Kickstater <Link to="/signup" >Sign Up</Link></Text>
+              <Text>ALready have an account ? <Link to="/login">Sign In</Link></Text>
             </Stack>
           </Stack>
           

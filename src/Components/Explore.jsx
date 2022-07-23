@@ -39,14 +39,7 @@ console.log(data);
         <Navbar/>
         <Flex w="80%" p={6} gap="4rem">
 
-        <Flex>
-       
-        <select size={"lg"}  placeholder='Sort By Time'>
-  <option value='ASEC'>Low to High</option>
-  <option value='DESC'>High to Low</option>
-  
-</select>
-</Flex>
+        
 <Flex>
 
 <select  size={"lg"} onChange={handleDateSort} >
