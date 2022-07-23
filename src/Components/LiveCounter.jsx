@@ -1,7 +1,18 @@
 import { Flex, Grid, Text } from '@chakra-ui/react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const LiveCounter = () => {
+  const [funded, setfunded] = useState(223702);
+  const [money, setmoney] = useState(45);
+  
+  useEffect(() => {
+  const timer = setTimeout(() => {
+    // console.log('This will run after 1 second!')
+    setfunded(funded+Math.floor((Math.random() * 100) + 1))
+    setmoney(money+Math.floor((Math.random() * 10) + 1))
+  }, 2000);
+  return () => clearTimeout(timer);
+}, [funded]);
   return (
     
     <Grid
@@ -21,10 +32,10 @@ const LiveCounter = () => {
       flexDirection="column"
       boxShadow="xl"
     >
-      <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }} color="teal.700">
-        223,702
+      <Text fontSize={["10px","15px","25px"]} color="teal.700">
+        {funded}
       </Text>
-      <Text fontSize="m">projects funded</Text>
+      <Text  fontSize={["5px","5px","25px"]}>Projects funded</Text>
     </Flex>
     <Flex
       justifyContent="center"
@@ -32,10 +43,10 @@ const LiveCounter = () => {
       flexDirection="column"
       boxShadow="xl"
     >
-      <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }} color="teal.700">
-        $6,156,106,519
+      <Text  fontSize={["10px","15px","25px"]} color="teal.700">
+        $6,156,519,{money}
       </Text>
-      <Text fontSize="m">towards creative work</Text>
+      <Text fontSize={["5px","5px","25px"]}>Towards creative work</Text>
     </Flex>
     <Flex
       justifyContent="center"
@@ -43,10 +54,10 @@ const LiveCounter = () => {
       flexDirection="column"
       boxShadow="xl"
     >
-      <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }} color="teal.700">
+      <Text  fontSize={["10px","15px","25px"]} color="teal.700">
         68,747,346
       </Text>
-      <Text fontSize="m">ppledges</Text>
+      <Text fontSize={["5px","5px","25px"]}>Pledges</Text>
     </Flex>
   </Grid>
   )

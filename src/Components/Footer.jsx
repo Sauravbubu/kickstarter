@@ -1,5 +1,6 @@
 import { Flex, Link,Image, Stack, Text, Select } from '@chakra-ui/react'
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 import { FaTwitter, FaYoutube, FaInstagram } from 'react-icons/fa';
 const Footer = () => {
   const tabs=[
@@ -15,9 +16,9 @@ const Footer = () => {
     <>  
     <Flex w="100%" p="1rem" gap="1rem"  boxShadow="base" mt="2rem" color="gray.500">
 {tabs.map((e,i)=>
-<Text ml="2rem" key={i} >{e}</Text>
+  <NavLink  key={i} to={`/home/${e}`}><Text ml="2rem" key={i} >{e}</Text></NavLink>
 )}
-
+{/* // <NavLink  key={i} to={`/home/${t}`}><Tab>  {t} </Tab> </NavLink> */}
 </Flex>
       <Flex alignItems='center' gap="4rem"  p="3rem" w="100%" justifyContent="space-evenly" ml="4rem" mr="4rem">
     

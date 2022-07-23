@@ -1,19 +1,19 @@
 import { Box, Center, Flex, Grid, Text } from "@chakra-ui/react";
 import React from "react";
-import Banner from "../../Components/Banner";
-import Featuredpost from "../../Components/Featuredpost";
-import Footer from "../../Components/Footer";
 import LiveCounter from "../../Components/LiveCounter";
 import Navbar from "../../Components/Navbar/Navbar";
+import Featuredpost from "../../Components/Featuredpost";
 import Recommended from "../../Components/Recommended";
 import Responsive from "../../Components/slickslider";
-
+import Footer from "../../Components/Footer";
+import Banner from "../../Components/Banner";
 
 const Home = () => {
   const bgimage = "https://i.imgur.com/2uMdJvK.png";
   return (
-    <div >
+    <div>
       <Navbar />
+
 
       <Box
         style={{
@@ -27,7 +27,7 @@ const Home = () => {
           zIndex: "-1",
           width: "100%",
           height: "400px",
-          padding: "50px",
+          padding: "70px",
           margin: "auto",
         }}
         bgGradient="radial(gray.300, yellow.400, pink.200)"
@@ -36,17 +36,21 @@ const Home = () => {
        
 <Text  fontSize="4xl"  textAlign="center" pb="2rem">Bring a creative project to life</Text>
 <Text fontSize="m"  textAlign="center"> ON KICKSTARTER:</Text>
-<LiveCounter/>
+<LiveCounter/> 
       </Box>
-<Flex p="4rem" gap="1rem">
+      <Flex p="4rem" gap="1rem">
       <Featuredpost/>
+      
+       
       <Recommended/>
      
 </Flex>
- <Responsive/>
+<Responsive/>
  <Banner/>
+ 
  <Responsive/>
  <Footer/>
+    
     </div>
   );
 };
